@@ -14,6 +14,12 @@ public class LogInScript {
             System.out.println("Enter your password: ");
             String password = scanner.nextLine();
 
+            // username cant be blank
+            if (username.isEmpty() || password.isEmpty()) {
+                System.out.println("Invalid username or password");
+                continue;
+            }
+
             // check the username and password with the existing credentials
             success = users.isValid(username, password);
 
